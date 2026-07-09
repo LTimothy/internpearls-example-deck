@@ -1,0 +1,70 @@
+{
+  "deck_name": "Example Decks::Pharmacology Basics",
+  "output": "decks/Pharmacology_Basics.apkg",
+  "id_seed": "example-pharmacology-basics-v1",
+  "base_tag": "ExampleDeck",
+  "subdecks": [
+    {
+      "name": "1. Drug Classes",
+      "tags": ["Pharmacology::Classes"],
+      "notes": [
+        {"type": "basic",
+         "front": "What does the drug-name suffix \"-olol\" usually tell you about a medication?",
+         "back": "It's a beta blocker (for example metoprolol, atenolol, propranolol).",
+         "why": "Shared stems in generic names group drugs by class, so the ending is a quick clue to what a drug does.",
+         "tag": "Naming"},
+        {"type": "basic",
+         "front": "NSAIDs such as ibuprofen and naproxen relieve pain by blocking which family of enzymes?",
+         "back": "Cyclooxygenase (COX) enzymes, which lowers prostaglandin production.",
+         "why": "Fewer prostaglandins means less inflammation and pain, and also less of the stomach-lining protection prostaglandins provide, which is why NSAIDs can upset the stomach.",
+         "tag": "NSAIDs"},
+        {"type": "basic",
+         "front": "Why is diphenhydramine (a first-generation antihistamine) more likely to cause drowsiness than a newer one like loratadine?",
+         "back": "It crosses the blood-brain barrier and blocks histamine receptors in the brain; newer antihistamines cross far less.",
+         "why": "Sedation tracks with how much of a drug reaches the central nervous system, not just whether it blocks histamine.",
+         "tag": "Antihistamines"}
+      ]
+    },
+    {
+      "name": "2. Everyday Dosing",
+      "tags": ["Pharmacology::Dosing"],
+      "notes": [
+        {"type": "basic",
+         "front": "Why is it easy to accidentally exceed the daily limit of acetaminophen?",
+         "back": "It's hidden inside many combination cold, flu, and pain products, so doses from several products add up without you noticing.",
+         "why": "Too much acetaminophen can injure the liver, and the risk comes from stacking products rather than a single large dose.",
+         "dosing": "Adult acetaminophen: commonly labeled at up to 3,000-4,000 mg per day; check the product label. <span class=\"src\">OTC package label</span>",
+         "tag": "Acetaminophen"},
+        {"type": "basic",
+         "front": "In a severe allergic reaction (anaphylaxis), what is the first-line medication?",
+         "back": "Epinephrine, given as an intramuscular injection into the outer thigh.",
+         "why": "Epinephrine reverses the airway swelling and low blood pressure of anaphylaxis faster than antihistamines, which act too slowly for an emergency.",
+         "dosing": "Adult epinephrine auto-injector: 0.3 mg intramuscular; repeat after 5-15 minutes if symptoms persist. <span class=\"src\">Public first-aid guidance</span>",
+         "tag": "Epinephrine"},
+        {"type": "basic",
+         "front": "What does naloxone do, and why must it sometimes be repeated?",
+         "back": "It reverses an opioid overdose by displacing opioids from their receptors. It can wear off before the opioid does, so symptoms can return and a repeat dose may be needed.",
+         "why": "Naloxone's effect is shorter than that of many opioids, which is the reason someone can relapse into overdose after an initial recovery.",
+         "dosing": "Naloxone: 0.4 mg intramuscular or a standard intranasal spray; repeat every 2-3 minutes as needed until breathing improves. <span class=\"src\">Public overdose-response guidance</span>",
+         "tag": "Naloxone"}
+      ]
+    },
+    {
+      "name": "3. Core Concepts",
+      "tags": ["Pharmacology::Concepts"],
+      "notes": [
+        {"type": "cloze",
+         "text": "A drug's {{c1::half-life}} is the time it takes for its blood concentration to fall by {{c2::half}}, and it roughly takes about {{c3::5}} half-lives to clear the drug from the body.",
+         "why": "Half-life sets how often a drug is dosed and how long effects and side effects linger after the last dose."},
+        {"type": "cloze",
+         "text": "{{c1::First-pass metabolism}} is the liver's breakdown of an oral drug before it reaches the bloodstream, which is one reason an oral dose is often {{c2::larger}} than the equivalent intravenous dose.",
+         "why": "Drugs heavily processed on this first pass may work poorly by mouth, so the route of administration can change the effective dose."},
+        {"type": "basic",
+         "front": "What is the difference between a drug's generic name and its brand name?",
+         "back": "The generic name is the standardized name for the active ingredient; a brand name is a manufacturer's trademark for a product containing it.",
+         "why": "One generic drug can be sold under many brand names, so learning the generic name avoids confusion between products that are really the same medicine.",
+         "tag": "Naming"}
+      ]
+    }
+  ]
+}
