@@ -15,7 +15,8 @@ widely-known drug facts, purely as a format demonstration.
 specs/pharmacology-basics.json   the deck content you edit
 decks/Pharmacology_Basics.apkg   the built deck the add-on downloads
 manifest.json                    the index the add-on reads (built)
-build.py                         rebuilds the .apkg and manifest.json
+guids.json                       every card GUID ever shipped (built; see below)
+build.py                         rebuilds the .apkg, manifest.json, and guids.json
 tools/build_deck.py              turns one spec into an .apkg
 ```
 
@@ -53,12 +54,20 @@ under the add-on's configured scope tag; this deck tags its notes under
    manifest is a hash of its spec.
 
 Keeping review history across edits: the builder derives each card's identity
-from its `id_seed` plus its front text, so editing a card's answer keeps its
-history, while rewording a front makes a new card. If you do reword a front,
-record it in an `aliases.json` next to `build.py` (`{"new front": "old front"}`);
-the build folds it into the manifest and the add-on uses it to match learners'
-existing cards. Don't change a deck's `deck_name` or `id_seed` once people are
-studying it.
+from its `id_seed` plus an identity key — an explicit `id` on the note if it has
+one, otherwise its front text. Editing a card's answer keeps its history, but
+rewording a front changes the key, and with it the GUID that learners' review
+history hangs on. So if you reword a front, freeze the identity in the same
+edit: add `"id": "<the old front text>"` to that note, which keeps the GUID
+exactly what every learner already has. The build enforces this — it compares
+every GUID against the committed `guids.json` baseline and fails, naming the
+card and the fix, if one would vanish (deleting a card on purpose means
+deleting its `guids.json` entry in the same commit). The add-on (v0.20.0+)
+matches cards by GUID first, so a frozen GUID carries history through any
+number of rewordings. `aliases.json` (`{"new front": "old front"}`, folded into
+the manifest) still works as a fallback for learners whose collections predate
+stable ids, but new renames shouldn't need it. Don't change a deck's
+`deck_name` or `id_seed` once people are studying it.
 
 ## License
 
