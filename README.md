@@ -2,8 +2,12 @@
 
 A tiny, self-contained deck source you can point the [Intern Pearls Deck
 Tools](https://github.com/LTimothy/internpearls-anki) Anki add-on at to see how
-syncing works. It holds one small deck, **Pharmacology Basics**, of general,
-widely-known drug facts, purely as a format demonstration.
+syncing works — or try in your browser first via the
+[live demo](https://ltimothy.github.io/internpearls-anki/), which mirrors this
+repo's content. It holds two small decks, **Pharmacology Basics** and **ABG
+Basics**, of general, widely-known facts, purely as a format demonstration
+(two decks so Manage decks, selective sync, and per-deck versioning have
+something real to show).
 
 > This deck is an example of the deck format, not medical advice. The facts and
 > doses are illustrative, general-knowledge examples and are not a clinical
@@ -12,8 +16,8 @@ widely-known drug facts, purely as a format demonstration.
 ## What's here
 
 ```
-specs/pharmacology-basics.json   the deck content you edit
-decks/Pharmacology_Basics.apkg   the built deck the add-on downloads
+specs/*.json                     the deck content you edit (one file per deck)
+decks/*.apkg                     the built decks the add-on downloads
 manifest.json                    the index the add-on reads (built)
 guids.json                       every card GUID ever shipped (built; see below)
 build.py                         rebuilds the .apkg, manifest.json, and guids.json

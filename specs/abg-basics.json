@@ -1,0 +1,38 @@
+{
+  "deck_name": "Example Decks::ABG Basics",
+  "output": "decks/ABG_Basics.apkg",
+  "id_seed": "example-abg-basics-v1",
+  "base_tag": "ExampleDeck",
+  "subdecks": [
+    {
+      "name": "1. Normal Values",
+      "tags": ["ABG::Normals"],
+      "notes": [
+        {"type": "basic",
+         "front": "What is the normal range for arterial blood pH?",
+         "back": "About 7.35 to 7.45.",
+         "why": "Everything in blood-gas reading starts from whether the pH is below, inside, or above this window.",
+         "tag": "Normals"},
+        {"type": "cloze",
+         "text": "Normal arterial values: pCO₂ about {{c1::35-45}} mmHg and bicarbonate (HCO₃⁻) about {{c2::22-26}} mEq/L.",
+         "why": "pCO₂ is the breathing (respiratory) number and bicarbonate is the kidney (metabolic) number; each can pull pH in its own direction."}
+      ]
+    },
+    {
+      "name": "2. Reading the Gas",
+      "tags": ["ABG::Reading"],
+      "notes": [
+        {"type": "basic",
+         "front": "On a blood gas, how do you tell a respiratory problem from a metabolic one?",
+         "back": "Look at which value moved in the direction that explains the pH: pCO₂ explains it → respiratory; bicarbonate explains it → metabolic.",
+         "why": "pH says acidemia or alkalemia; the value that accounts for it says which organ system started the problem.",
+         "tag": "Reading"},
+        {"type": "basic",
+         "front": "What question does Winter's formula answer when reading a blood gas?",
+         "back": "Whether the lungs are compensating appropriately for a metabolic acidosis: it predicts the expected pCO₂ from the measured bicarbonate.",
+         "why": "A measured pCO₂ far from the predicted value means a second, separate breathing problem is present, not just compensation.",
+         "tag": "Reading"}
+      ]
+    }
+  ]
+}

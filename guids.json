@@ -1,4 +1,10 @@
 {
+  "Example Decks::ABG Basics": {
+    "F/8?b,FOSg": "Normal arterial values: pCO₂ about {{c1::35-45}} mmHg and bicarbonate (HCO₃⁻) about {{c2::22-26}} mEq/L.",
+    "G6<jf,@t!H": "On a blood gas, how do you tell a respiratory problem from a metabolic one?",
+    "GyIZGS(Ej?": "What question does Winter's formula answer when reading a blood gas?",
+    "v!P$C<)nw~": "What is the normal range for arterial blood pH?"
+  },
   "Example Decks::Pharmacology Basics": {
     "BeH>?IJZTf": "Why is diphenhydramine (a first-generation antihistamine) more likely to cause drowsiness than a newer one like loratadine?",
     "E$[hvf$K97": "{{c1::First-pass metabolism}} is the liver's breakdown of an oral drug before it reaches the bloodstream, which is one reason an oral dose is often {{c2::larger}} than the equivalent intravenous dose.",

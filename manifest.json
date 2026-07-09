@@ -2,6 +2,13 @@
   "schema": 1,
   "decks": [
     {
+      "name": "Example Decks::ABG Basics",
+      "apkg": "decks/ABG_Basics.apkg",
+      "spec": "specs/abg-basics.json",
+      "version": "ded4f94c",
+      "cards": 5
+    },
+    {
       "name": "Example Decks::Pharmacology Basics",
       "apkg": "decks/Pharmacology_Basics.apkg",
       "spec": "specs/pharmacology-basics.json",
