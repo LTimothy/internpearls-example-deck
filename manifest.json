@@ -12,8 +12,8 @@
       "name": "Example Decks::Pharmacology Basics",
       "apkg": "decks/Pharmacology_Basics.apkg",
       "spec": "specs/pharmacology-basics.json",
-      "version": "e3133318",
-      "cards": 12
+      "version": "bfe73dcc",
+      "cards": 7
     }
   ],
   "front_aliases": {}

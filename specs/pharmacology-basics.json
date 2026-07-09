@@ -17,24 +17,13 @@
          "front": "NSAIDs such as ibuprofen and naproxen relieve pain by blocking which family of enzymes?",
          "back": "Cyclooxygenase (COX) enzymes, which lowers prostaglandin production.",
          "why": "Fewer prostaglandins means less inflammation and pain, and also less of the stomach-lining protection prostaglandins provide, which is why NSAIDs can upset the stomach.",
-         "tag": "NSAIDs"},
-        {"type": "basic",
-         "front": "Why is diphenhydramine (a first-generation antihistamine) more likely to cause drowsiness than a newer one like loratadine?",
-         "back": "It crosses the blood-brain barrier and blocks histamine receptors in the brain; newer antihistamines cross far less.",
-         "why": "Sedation tracks with how much of a drug reaches the central nervous system, not just whether it blocks histamine.",
-         "tag": "Antihistamines"}
+         "tag": "NSAIDs"}
       ]
     },
     {
       "name": "2. Everyday Dosing",
       "tags": ["Pharmacology::Dosing"],
       "notes": [
-        {"type": "basic",
-         "front": "Why is it easy to accidentally exceed the daily limit of acetaminophen?",
-         "back": "It's hidden inside many combination cold, flu, and pain products, so doses from several products add up without you noticing.",
-         "why": "Too much acetaminophen can injure the liver, and the risk comes from stacking products rather than a single large dose.",
-         "dosing": "Adult acetaminophen: commonly labeled at up to 3,000-4,000 mg per day; check the product label. <span class=\"src\">OTC package label</span>",
-         "tag": "Acetaminophen"},
         {"type": "basic",
          "front": "In a severe allergic reaction (anaphylaxis), what is the first-line medication?",
          "back": "Epinephrine, given as an intramuscular injection into the outer thigh.",
@@ -55,15 +44,7 @@
       "notes": [
         {"type": "cloze",
          "text": "A drug's {{c1::half-life}} is the time it takes for its blood concentration to fall by {{c2::half}}, and it roughly takes about {{c3::5}} half-lives to clear the drug from the body.",
-         "why": "Half-life sets how often a drug is dosed and how long effects and side effects linger after the last dose."},
-        {"type": "cloze",
-         "text": "{{c1::First-pass metabolism}} is the liver's breakdown of an oral drug before it reaches the bloodstream, which is one reason an oral dose is often {{c2::larger}} than the equivalent intravenous dose.",
-         "why": "Drugs heavily processed on this first pass may work poorly by mouth, so the route of administration can change the effective dose."},
-        {"type": "basic",
-         "front": "What is the difference between a drug's generic name and its brand name?",
-         "back": "The generic name is the standardized name for the active ingredient; a brand name is a manufacturer's trademark for a product containing it.",
-         "why": "One generic drug can be sold under many brand names, so learning the generic name avoids confusion between products that are really the same medicine.",
-         "tag": "Naming"}
+         "why": "Half-life sets how often a drug is dosed and how long effects and side effects linger after the last dose."}
       ]
     }
   ]
