@@ -57,7 +57,15 @@ def main():
             "cards": cards,
         })
         print(f"built  {spec['deck_name']}  [{version}, {cards} cards]")
-    manifest = {"schema": 1, "decks": decks, "front_aliases": {}}
+    # front_aliases maps a card's current front text to its previous wording, so the
+    # add-on can keep a learner's history when a front is reworded. Optional: create
+    # aliases.json ({"new front": "old front"}) next to this script if you reword one.
+    aliases_path = os.path.join(HERE, "aliases.json")
+    aliases = {}
+    if os.path.exists(aliases_path):
+        with open(aliases_path, encoding="utf8") as fh:
+            aliases = json.load(fh)
+    manifest = {"schema": 1, "decks": decks, "front_aliases": aliases}
     with open(os.path.join(HERE, "manifest.json"), "w", encoding="utf8") as fh:
         json.dump(manifest, fh, ensure_ascii=False, indent=2)
     print(f"wrote manifest.json ({len(decks)} decks)")

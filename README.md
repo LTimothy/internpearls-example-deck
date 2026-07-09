@@ -24,8 +24,9 @@ committed so the add-on can download them without building anything itself.
 
 ## Point the add-on at it
 
-In Anki, open **Intern Pearls → Manage decks → Configure source** and give it
-this repo:
+The one-click way (add-on v0.18.0+): in Anki, open **Intern Pearls → Manage
+decks → Configure source** and pick **Try the example deck** — it points at this
+repo for you. Or configure it by hand in the same dialog:
 
 - **GitHub repo**: `LTimothy/internpearls-example-deck` (or your fork)
 - **Branch**: `main`
@@ -53,8 +54,11 @@ under the add-on's configured scope tag; this deck tags its notes under
 
 Keeping review history across edits: the builder derives each card's identity
 from its `id_seed` plus its front text, so editing a card's answer keeps its
-history, while rewording a front makes a new card. Don't change a deck's
-`deck_name` or `id_seed` once people are studying it.
+history, while rewording a front makes a new card. If you do reword a front,
+record it in an `aliases.json` next to `build.py` (`{"new front": "old front"}`);
+the build folds it into the manifest and the add-on uses it to match learners'
+existing cards. Don't change a deck's `deck_name` or `id_seed` once people are
+studying it.
 
 ## License
 
