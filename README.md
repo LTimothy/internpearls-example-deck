@@ -75,15 +75,15 @@ No terminal or programming needed; every step happens on github.com.
    > ([download](https://github.com/LTimothy/internpearls-anki/releases/latest),
    > then Tools > Add-ons > Install from file, and restart Anki). Open
    > **Intern Pearls > Manage decks > Configure source**, pick GitHub repo, and
-   > enter `YOURNAME/YOURREPO`. Then click **Update my decks**. One more step so
-   > your own notes on cards survive updates: in Tools > Add-ons > Intern Pearls
-   > Deck Tools > Config, set `scope_tag` to `YOURBASETAG` and `export_deck` to
-   > `YOURDECKNAME`.
+   > enter `YOURNAME/YOURREPO`. Say yes when it offers this deck's recommended
+   > settings, then click **Update my decks**.
 
-   That last config step matters: the add-on only protects personal annotations
-   and takes its automatic pre-sync backups for cards under its configured
-   `scope_tag` and `export_deck`, and those default to the Intern Pearls deck's
-   values, not yours.
+   That recommended-settings offer (add-on v0.30.0+) is what scopes note
+   protection and automatic backups to your deck; the build derives the values
+   from your specs and puts them in the manifest, nothing to maintain. Anyone
+   on an older add-on version instead sets `scope_tag` (your spec's `base_tag`)
+   and `export_deck` (your top-level deck name) by hand in Tools > Add-ons >
+   Intern Pearls Deck Tools > Config.
 6. **Publish updates.** Edit the specs again, commit, and wait for the green
    check. Everyone's next **Update my decks** pulls only the decks that
    changed, keeps their review scheduling, and preserves the personal notes

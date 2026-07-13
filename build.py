@@ -82,6 +82,32 @@ def lint_guid_stability(current, baseline):
             "guids.json in the same commit.")
 
 
+def scope_suggestion(specs, deck_names):
+    """Optional manifest keys carrying this source's suggested add-on settings.
+
+    The add-on (v0.30.0+) offers these to anyone configuring this source, so its
+    field protection and automatic pre-sync backup cover YOUR decks instead of its
+    defaults. scope_tag is the specs' shared base_tag (omitted if they disagree);
+    export_deck is the longest common "::" path prefix of the deck names. Nothing
+    to maintain by hand: both derive from the specs on every build.
+    """
+    out = {}
+    tags = {s.get("base_tag") for s in specs}
+    if len(tags) == 1 and None not in tags:
+        out["scope_tag"] = tags.pop()
+    parts = [n.split("::") for n in deck_names]
+    if parts:
+        root = parts[0]
+        for p in parts[1:]:
+            i = 0
+            while i < min(len(root), len(p)) and root[i] == p[i]:
+                i += 1
+            root = root[:i]
+        if root:
+            out["export_deck"] = "::".join(root)
+    return out
+
+
 def main():
     os.makedirs(os.path.join(HERE, "decks"), exist_ok=True)
     spec_paths = sorted(glob.glob(os.path.join(HERE, "specs", "*.json")))
@@ -118,7 +144,9 @@ def main():
     if os.path.exists(aliases_path):
         with open(aliases_path, encoding="utf8") as fh:
             aliases = json.load(fh)
-    manifest = {"schema": 1, "decks": decks, "front_aliases": aliases}
+    manifest = {"schema": 1, "decks": decks,
+                **scope_suggestion(specs.values(), [d["name"] for d in decks]),
+                "front_aliases": aliases}
     with open(os.path.join(HERE, "manifest.json"), "w", encoding="utf8") as fh:
         json.dump(manifest, fh, ensure_ascii=False, indent=2)
     # Only reached after every deck built and the stability lint passed, so a failed

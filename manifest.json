@@ -16,5 +16,7 @@
       "cards": 7
     }
   ],
+  "scope_tag": "ExampleDeck",
+  "export_deck": "Example Decks",
   "front_aliases": {}
 }
