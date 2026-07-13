@@ -1,0 +1,42 @@
+# Rebuild the decks whenever a spec changes, so deck maintainers never need a
+# terminal: edit specs/*.json on github.com, commit, and this commits the rebuilt
+# .apkg files, manifest.json, and guids.json back to the repo.
+name: Build decks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "specs/**"
+      - "aliases.json"
+      - "tools/**"
+      - "build.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-decks
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install genanki
+      - run: python build.py
+      - name: Commit built decks
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add decks manifest.json guids.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Rebuild decks"
+            git pull --rebase origin main
+            git push
+          fi
